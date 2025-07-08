@@ -5,7 +5,16 @@ on:
         branches: [main]
 
 jobs:
+    test:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Run Test code 
+              run: echo "run test command"
+
+
     deploy:
+        needs: test
         runs-on: ubuntu-latest
 
         steps:
@@ -20,10 +29,10 @@ jobs:
               with: 
                 node-version: '22'
 
-            - name: "Run Step 2"
-              run: echo "Run Step 2"
+            - name: "Install NPM"
+              run: npm ci
 
-            - name: "Run Step 3"
-              run: echo "Run Step 3"
+            - name: "Build Code"
+              run: npm run build
 
 

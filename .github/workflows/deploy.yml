@@ -12,6 +12,14 @@ jobs:
             - name: "Run step 1"
               run: echo "Run Step 1"
 
+            - name: Checkout
+              uses: actions/checkout@v4
+
+            - name: Setup Node Version
+              uses: actions/setup-node@v4
+              with: 
+                node-version: '22'
+
             - name: "Run Step 2"
               run: echo "Run Step 2"
 

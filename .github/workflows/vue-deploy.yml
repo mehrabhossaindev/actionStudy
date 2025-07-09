@@ -1,0 +1,23 @@
+name: Download a Artifact
+
+on:
+    workflow_dispatch:
+
+jobs:
+    deploy:
+      runs-on: ubuntu-latest
+      steps:
+        - name: "Run Deployment"
+          run: echo "Hello Deployment"
+
+        - name: Download Artifacts
+          uses: actions/download-artifact@v4
+          with:
+            name: build-artifact
+            path: artifact
+            github-token: ${{ github.token}}
+            repository: ${{ github.repository }}
+            run-id: 12312312
+
+        - name: Display structure of downloaded files
+          run: ls -R artifact

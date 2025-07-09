@@ -10,14 +10,18 @@ jobs:
 
     steps:
       - name: "Run Dev Stage"
-        run: echo "Hello Dev Stage"
+        run: | 
+          echo "Hello Dev Stage"
+          echo "User name is ${{vars.USERNAME}}"
   
   Stage:
     runs-on: ubuntu-latest
 
     steps:
       - name: "Runs Stage Section"
-        run: echo "Hello Stage section"
+        run: | 
+          echo "Hello Stage section"
+          echo "User name is ${{vars.USERNAME}}"
 
 
 
@@ -25,8 +29,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "Runs Pod Stage"
-        run: echo "Hello Pod Stage"
-        
+        run: | 
+          echo "Hello Pod Stage"
+          echo "User name is ${{vars.USERNAME}}"
+
         
 
 

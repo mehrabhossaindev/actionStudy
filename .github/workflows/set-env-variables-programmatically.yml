@@ -1,3 +1,4 @@
+name: Set Env Variables Programmatically
 on:
     workflow_dispatch:
 

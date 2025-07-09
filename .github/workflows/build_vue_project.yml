@@ -30,5 +30,12 @@ jobs:
               with:
                 name: artifact-projects
                 path: dist
+    
+    deploy:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: "Run Deployment"
+              run: echo "Hello Deployment"
 
 

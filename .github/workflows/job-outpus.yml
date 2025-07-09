@@ -17,4 +17,15 @@ jobs:
         - name: access Output
           run: |
             echo "Your name is ${{steps.set-output-1.outputs.name}}"
+
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Initial Deploy Stage
+              run: |
+                echo "Instail Deployment"
+
+            - name: access Output
+              run: |
+                echo "Your name is ${{steps.set-output-1.outputs.name}}"
             

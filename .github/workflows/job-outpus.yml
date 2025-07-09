@@ -7,6 +7,8 @@ jobs:
 
     build:
       runs-on: ubuntu-latest
+      outputs:
+        build_output: ${{steps.set-output-1.outputs.name}}
 
       steps:
         - name: Set Output
@@ -20,6 +22,8 @@ jobs:
 
     deploy:
         runs-on: ubuntu-latest
+        needs: build
+
         steps:
             - name: Initial Deploy Stage
               run: |
@@ -27,5 +31,5 @@ jobs:
 
             - name: access Output
               run: |
-                echo "Your name is ${{steps.set-output-1.outputs.name}}"
+                echo "Your name is ${{needs.build.outputs.build_output}}"
             

@@ -4,9 +4,19 @@ on:
   workflow_dispatch:
 
 jobs:
+
+  Test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Run Test"
+        run: |
+          echo "Hello Test"
+          echo "Username is ${{vars.USERNAME}}"
+          
   
   Dev:
     runs-on: ubuntu-latest
+    environment: Dev
 
     steps:
       - name: "Run Dev Stage"
@@ -16,6 +26,7 @@ jobs:
   
   Stage:
     runs-on: ubuntu-latest
+    environment: Stage
 
     steps:
       - name: "Runs Stage Section"
@@ -27,6 +38,8 @@ jobs:
 
   Pod:
     runs-on: ubuntu-latest
+    environment: Pod
+
     steps:
       - name: "Runs Pod Stage"
         run: | 

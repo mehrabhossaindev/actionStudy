@@ -1,0 +1,23 @@
+name: Env Variables
+
+on:
+    workflow_dispatch:
+
+
+env:
+    CHANNEL_NAME: "LearwithMehrab"    
+
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Greetings
+              run: echo "Hello ${{env.CHANNEL_NAME}}"
+
+            - name: Get commments on ${{env.CHANNEL_NAME}}!
+              run: |
+                echo "Awsome !!"
+                echo "Great Content"
+                echo "Thank you for sharing"

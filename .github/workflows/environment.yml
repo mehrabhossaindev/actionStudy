@@ -1,0 +1,33 @@
+name: Environment Setup
+
+on:
+  workflow_dispatch:
+
+jobs:
+  
+  Dev:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "Run Dev Stage"
+        run: echo "Hello Dev Stage"
+  
+  Stage:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "Runs Stage Section"
+        run: echo "Hello Stage section"
+
+
+
+  Pod:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Runs Pod Stage"
+        run: echo "Hello Pod Stage"
+        
+        
+
+
+

@@ -21,4 +21,4 @@ jobs:
 
             - name: Get commments on ${{env.CHANNEL_NAME}}!
               run: |
-                echo "Your Selected amount is - $AMOUNT"
+                echo Your Selected amount is - $AMOUNT

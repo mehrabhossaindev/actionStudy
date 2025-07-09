@@ -1,0 +1,20 @@
+name: Step Output
+
+on: 
+    workflow_dispatch:
+
+jobs:
+    jobs1:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Set Output
+              id: step-output-1
+              shell: bash
+              run: |
+                echo "name=Mehrab" >> $GITHUB_OUTPUT
+
+            - name: Access Output
+              run: |
+                echo "Your name is: ${{steps.step-output-1.outputs.name}}"
+                

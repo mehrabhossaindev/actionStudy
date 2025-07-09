@@ -14,7 +14,15 @@ jobs:
               run: |
                 echo "name=Mehrab" >> $GITHUB_OUTPUT
 
+            - name: set output 2
+              id: step-output-2
+              shell: bash
+              run: |
+                echo "salary=10000" >> $GITHUB_OUTPUT
+
+
             - name: Access Output
               run: |
                 echo "Your name is: ${{steps.step-output-1.outputs.name}}"
-                
+                echo "Your Salary is : ${{steps.step-output-2.outputs.salary}}"
+

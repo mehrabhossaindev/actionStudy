@@ -10,6 +10,8 @@ jobs:
     steps:
       - name: "run my action"
         uses: mehrabhossaindev/installNodeJSWithPram@main
+        with:
+          nodeJsVersion: 21
        ## uses: mehrabhossaindev/InstallNodeJs@v1
         
 

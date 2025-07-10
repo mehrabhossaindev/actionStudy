@@ -8,6 +8,9 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+      - name: Checkout 
+        uses: actions/checkout@v4
+        
       - name: "run my action"
         id: setup-build-env
         uses: ./.github/actions/SetupBuildEnvironment

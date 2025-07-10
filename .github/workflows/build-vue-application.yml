@@ -9,7 +9,8 @@ jobs:
     
     steps:
       - name: "run my action"
-        uses: mehrabhossaindev/InstallNodeJs@v1
+    ## uses: mehrabhossaindev/InstallNodeJs@v1
+        uses: mehrabhossaindev/installNodeJSWithPram@main
 
       - name: NPM install
         run: npm ci

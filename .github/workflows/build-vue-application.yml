@@ -9,10 +9,17 @@ jobs:
     
     steps:
       - name: "run my action"
+        id: setup-build-env
         uses: mehrabhossaindev/installNodeJSWithPram@main
         with:
           nodeJsVersion: 21
        ## uses: mehrabhossaindev/InstallNodeJs@v1
+
+      - name: Output from action
+        run: |
+          echo "Repository Owner - ${{steps.setup-build-env.outputs.repoOwner}}"
+          echo "DefaultBranch - ${{steps.setup-build-env.outputs.defaultBranch}}"
+          echo "CICDKey - ${{steps.setup-build-env.outputs.cicdKey}}"
         
 
       - name: NPM install

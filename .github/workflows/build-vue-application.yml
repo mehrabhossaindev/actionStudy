@@ -8,14 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - name: "Start build Vue Project"
-        run: echo "Start build"
-      - name: Checkout 
-        uses: actions/checkout@v4
-      - name: Setup Environment
-        uses: actions/setup-node@v4
-        with:
-          node-version: '22'
+      - name: "run my action"
+        uses: mehrabhossaindev/InstallNodeJs@main
 
       - name: NPM install
         run: npm ci
